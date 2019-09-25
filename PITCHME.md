@@ -7,23 +7,126 @@ theme: uncover
 <!-- backgroundColor: #393D3F -->
 <!-- color: #D7FFF1-->
 
-# WDI-09-19 Term 1
-# At Code Immersives
+<style>
+  code, pre {
+    background-color: #393D3F;
+    color: #D7FFF1;
+  }
 
-![w:300](https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/67457288_2444284939180138_6392391575451729920_n.png?_nc_cat=103&_nc_oc=AQmZLB7bEGi-TWLw0PGVwUYGxQknlSNkCXmrSQLFdQKlZbBwK6Hxs6aheAkaxgfzknU&_nc_ht=scontent-lga3-1.xx&oh=b2dd9a8e2eb214237407cd69358e1831&oe=5E161CD7)
+  h1 {
+    color: red;
+  }
+</style>
 
-### A Breakdown In Markdown
+# Objective
+
+Use JavaScript's `map` method to create a transformed data set.
 
 ---
 
-### Terminal and IDE Skills - 40 Hours
+# Introduction To Map
 
-![w:300](https://i.giphy.com/media/aNTYdoZaKU7YY/source.gif)
+![w:500](https://stephenliddell.files.wordpress.com/2012/09/world-political-map.jpg)
 
-* The macOS File Structure, BASH, Git
-* Workflow and Text Editing, VS Code Fundamentals
-* Intro to Markdown
-* Coding Logic L1
+(No, it's not that kind of map.)
+
+---
+
+### What Does Map Do?
+
+It creates a new data set based on the transformation function you pass it. It might look something like this:
+
+```javascript
+const doubled = numbers.map(multiplyBy2);
+const titles = sentences.map(changeToTitleCase);
+const tweetAvatars = bioPhotos.map(reduceImageSize);
+```
+
+---
+
+### We Now Have New Data Based On Our Old Data
+
+* `doubled` is a new array of doubled numbers.
+* `titles` is a new array of strings Where Every Word Starts With A Capital Letter
+* `tweetAvatars` is a new array of smaller bio pictures.
+* Crucially, our old-- hold on... this deserves its own slide!
+
+---
+
+### Not Mutative
+
+Crucially, our old data remains.
+
+We have our small avatars for tweets, but we haven't overwritten our big bio photos!
+
+---
+
+![w:500](https://upload.wikimedia.org/wikipedia/en/d/dd/Gnomes_plan.png)
+
+But what were we passing in as arguments to `map` back there? How do I use `map`? How does it _work_?
+
+---
+
+# Part Two: Functions All The Way Down
+
+---
+
+### Passing Objects
+
+We're used to passing in objects on which an action is done.
+
+```javascript
+const number2 = multiplyBy2(num);
+const title = changeToTitleCase(sentence);
+const tweetAvatar = reduceImageSize(bioPhoto)
+```
+
+Those functions take in one piece of data, transform it, and return the new data.
+
+---
+
+### Passing In Actions
+
+But if we have a collection of data, like an array, it would be handy if we could tell a function:
+
+"Here's a transformation, run this on every piece of data in the collection and give me back that transformed collection."
+
+And that's `map`!
+
+---
+
+### I Think I Get It, But I Could Use An Emoji-Based Explanation
+
+Well... 😁!
+
+---
+```javascript
+const ingredients = ['🐔', '🐮', '🐠'];
+const food = ingredients.map(cook);
+food === ['🍗', '🍔', '🍣'];
+
+const oldWorld = ['🐴', '🏰', '🚂'];
+const newWorld = oldWorld.map(modernize);
+newWorld === ['🚗', '🏙', '🚆'];
+```
+---
+
+### You Tell Map HOW To Transform Each Piece Of Data
+
+It takes care of the rest!
+
+---
+
+### How Do I Get This "Map"?
+
+* The `map` method is part of JavaScript's Array prototype.
+* Because it's on that "blueprint", we get it "for free" on every array!
+
+---
+
+### Code Along
+
+Let's `map` some arrays together!
 
 ---
 
